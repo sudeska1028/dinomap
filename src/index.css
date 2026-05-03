@@ -889,6 +889,18 @@ h1, h2, h3, h4 {
   animation: moveLeftRight 2.5s infinite ease-in-out;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.mouse-icon .left-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 35%;
+  border-radius: 10px 0 0 0;
+  background: var(--accent);
+  animation: clickAnimation 2.5s infinite;
 }
 
 .mouse-icon .wheel {
@@ -912,6 +924,11 @@ h1, h2, h3, h4 {
 @keyframes scrollWheel {
   0% { top: 6px; opacity: 1; }
   100% { top: 16px; opacity: 0; }
+}
+
+@keyframes clickAnimation {
+  0%, 15%, 85%, 100% { opacity: 0; }
+  25%, 75% { opacity: 0.8; box-shadow: 0 0 8px var(--accent-glow); }
 }
 
 @keyframes fadeOutHint {

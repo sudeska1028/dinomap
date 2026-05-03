@@ -74,9 +74,10 @@ function App() {
 
       <div className="interaction-hint">
         <div className="mouse-icon">
+          <div className="left-click"></div>
           <div className="wheel"></div>
         </div>
-        <span>Drag to explore</span>
+        <span>Click & drag to explore</span>
       </div>
 
       <GlobeView
