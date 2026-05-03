@@ -857,81 +857,67 @@ h1, h2, h3, h4 {
   transform: translateX(-50%) translateY(0) scale(1);
 }
 
-/* Animated Interaction Hint */
-.interaction-hint {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  pointer-events: none;
-  z-index: 5;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-  animation: fadeOutHint 8s forwards;
-  animation-delay: 6s; /* stays fully visible for 6s, then fades out */
+/* Custom Cursor */
+* {
+  cursor: none !important;
 }
 
-.mouse-icon {
-  width: 24px;
-  height: 38px;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
-  position: relative;
-  animation: moveLeftRight 2.5s infinite ease-in-out;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: rgba(0,0,0,0.2);
-  overflow: hidden;
-}
-
-.mouse-icon .left-click {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 35%;
-  border-radius: 10px 0 0 0;
-  background: var(--accent);
-  animation: clickAnimation 2.5s infinite;
-}
-
-.mouse-icon .wheel {
-  width: 4px;
+.custom-cursor-dot {
+  position: fixed;
+  width: 8px;
   height: 8px;
-  background: var(--accent);
-  border-radius: 2px;
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scrollWheel 2s infinite;
-  box-shadow: 0 0 5px var(--accent-glow);
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
-@keyframes moveLeftRight {
-  0%, 100% { transform: translateX(-15px) rotate(-5deg); }
-  50% { transform: translateX(15px) rotate(5deg); }
+.custom-cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99998;
+  transition: transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
-@keyframes scrollWheel {
-  0% { top: 6px; opacity: 1; }
-  100% { top: 16px; opacity: 0; }
+/* Hovering effect */
+.custom-cursor-dot.hovering {
+  width: 12px;
+  height: 12px;
+  background-color: #f5a623;
+  box-shadow: 0 0 15px rgba(245, 166, 35, 0.8);
 }
 
-@keyframes clickAnimation {
-  0%, 15%, 85%, 100% { opacity: 0; }
-  25%, 75% { opacity: 0.8; box-shadow: 0 0 8px var(--accent-glow); }
+.custom-cursor-ring.hovering {
+  width: 60px;
+  height: 60px;
+  border-color: #f5a623;
+  background-color: rgba(245, 166, 35, 0.1);
+  box-shadow: 0 0 15px rgba(245, 166, 35, 0.5);
 }
 
-@keyframes fadeOutHint {
-  to { opacity: 0; visibility: hidden; }
+/* Clicking effect */
+.custom-cursor-dot.clicking {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  box-shadow: 0 0 20px #fff;
+}
+
+.custom-cursor-ring.clicking {
+  width: 70px;
+  height: 70px;
+  border-width: 4px;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 

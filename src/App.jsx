@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GlobeView from './components/GlobeView';
 import MuseumPanel from './components/MuseumPanel';
 import LifeMapPanel from './components/LifeMapPanel';
+import CustomCursor from './components/CustomCursor';
 import { museums, dinosaurs } from './data';
 
 const ERAS = ['All', 'Triassic', 'Jurassic', 'Cretaceous'];
@@ -72,13 +73,7 @@ function App() {
         )}
       </header>
 
-      <div className="interaction-hint">
-        <div className="mouse-icon">
-          <div className="left-click"></div>
-          <div className="wheel"></div>
-        </div>
-        <span>Click & drag to explore</span>
-      </div>
+      <CustomCursor />
 
       <GlobeView
         viewMode={viewMode}
