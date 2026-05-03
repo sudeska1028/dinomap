@@ -64,14 +64,20 @@ const CustomCursor = () => {
 
   return (
     <>
+      {/* Ripple effect for clicking */}
       <div 
-        className={`custom-cursor-dot ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
+        className={`custom-cursor-ripple ${isClicking ? 'clicking' : ''}`}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
       />
+      {/* The actual arrow cursor */}
       <div 
-        className={`custom-cursor-ring ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
+        className={`custom-cursor-arrow ${isHovering ? 'hovering' : ''}`}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      />
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
+        </svg>
+      </div>
     </>
   );
 };
