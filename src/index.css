@@ -562,6 +562,10 @@ h1, h2, h3, h4 {
   .side-panel {
     width: 100%;
   }
+  .welcome-panel {
+    display: none !important;
+  }
+
   .museum-content {
     padding: 1.5rem;
   }

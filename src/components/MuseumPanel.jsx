@@ -8,7 +8,7 @@ const MuseumPanel = ({ museum, onClose }) => {
 
   if (!museum) {
     return (
-      <div className="side-panel glass-panel open" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '2rem' }}>
+      <div className="side-panel glass-panel open welcome-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '2rem' }}>
         <MapPin size={48} style={{ color: 'var(--accent)', marginBottom: '1rem', opacity: 0.8 }} />
         <h2 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>Welcome to Museum Explorer</h2>
         <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
