@@ -2,6 +2,7 @@
 
 **Global Paleontology Navigator**
 
+🌍 **Live Demo:** [https://jazzy-mandazi-091194.netlify.app/](https://jazzy-mandazi-091194.netlify.app/)
 DinoMap 3D is an immersive, interactive 3D globe application built with React and Three.js that brings the prehistoric world to life. Explore global natural history museums, compare stunning fossil exhibits with their realistic reconstructions, and navigate the ancient habitats of iconic dinosaurs.
 
 ## ✨ Features
