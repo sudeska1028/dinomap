@@ -9,10 +9,10 @@ const MuseumPanel = ({ museum, onClose }) => {
   if (!museum) {
     return (
       <div className="side-panel glass-panel open welcome-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '2rem' }}>
-        <MapPin size={48} style={{ color: 'var(--accent)', marginBottom: '1rem', opacity: 0.8 }} />
+        <MapPin size={48} style={{ color: '#f5a623', marginBottom: '1rem', opacity: 0.8 }} />
         <h2 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>Welcome to Museum Explorer</h2>
         <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-          Select any of the glowing blue museum pins on the 3D globe to explore their incredible dinosaur fossil collections and compare them with realistic reconstructions.
+          Select any of the glowing golden museum pins on the 3D globe to explore their incredible dinosaur fossil collections and compare them with realistic reconstructions.
         </p>
       </div>
     );

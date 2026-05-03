@@ -25,7 +25,7 @@ function App() {
   });
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${(selectedMuseum || selectedDino) ? 'panel-is-open' : ''}`}>
       <header className="app-header">
         <h1 className="app-title">DinoMap 3D</h1>
         <div className="app-subtitle">Global Paleontology Navigator</div>
@@ -71,6 +71,13 @@ function App() {
           </div>
         )}
       </header>
+
+      <div className="interaction-hint">
+        <div className="mouse-icon">
+          <div className="wheel"></div>
+        </div>
+        <span>Drag to explore</span>
+      </div>
 
       <GlobeView
         viewMode={viewMode}

@@ -67,7 +67,7 @@ const GlobeView = ({ viewMode = 'museum', museums = [], filteredDinos = [], onMu
   const dinoPoints = JSON.parse(JSON.stringify(rawDinoPoints));
   const maxIterations = 60;
   const forceStrength = 0.6;
-  const collisionDistance = 12; // Repulsion distance in degrees
+  const collisionDistance = 5; // Repulsion distance in degrees
 
   for (let i = 0; i < maxIterations; i++) {
     let moved = false;

@@ -16,7 +16,7 @@ const LifeMapPanel = ({ selectedDino, onDinoSelect }) => {
         <X size={20} />
       </button>
 
-      <div style={{ position: 'relative', width: '100%', height: '260px', overflow: 'hidden', flexShrink: 0, backgroundColor: '#000' }}>
+      <div className="lifemap-header-img-container" style={{ position: 'relative', width: '100%', overflow: 'hidden', flexShrink: 0, backgroundColor: '#000' }}>
         <img
           src={selectedDino.animation_url}
           alt={selectedDino.species}
